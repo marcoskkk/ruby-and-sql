@@ -3,6 +3,27 @@
 # should be the top-level directory (i.e. /workspace/your-app/) and then run:
 # rails runner code-along/0-classes.rb
 
+brians_favorite_food = String.new("taco")
+bens_favorite_food = "sushi" # shortcut of how to create string
+
+puts brians_favorite_food.upcase
+puts bens_favorite_food.upcase
+
 # String Class
 
 # String Methods
+
+class Dog
+    def speak
+        puts "Woof"
+    end
+end
+
+class Cat
+    def speak
+        puts "Meow"
+    end
+end
+
+jenkins = Dog.new
+jenkins.speak
