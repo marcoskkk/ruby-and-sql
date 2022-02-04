@@ -25,23 +25,19 @@ Activity.destroy_all
 
 # 5. Insert at least 2 activities into the activities table
 brian = Salesperson.where({last_name: "Eng", first_name: "Brian"})[0]
-contact = Contact.where({first_name: "Tim", last_name: "Cook"})[0]
-values = {
-  salesperson_id: brian.id,
-  contact_id: contact.id,
-  note: "Grabbed tacos"
-}
-activity = Activity.new(values)
+contact = Contact.where({first_name: "Marcos", last_name: "Kashima"})[0]
+activity = Activity.new
+activity.salesperson_id = brian.id
+activity.contact_id = contact.id
+activity.activity = "Grabbed tacos"
 activity.save
 
 ben = Salesperson.where({last_name: "Block", first_name: "Ben"})[0]
-contact = Contact.where({first_name: "Elon", last_name: "Musk"})[0]
-values = {
-  salesperson_id: ben.id,
-  contact_id: contact.id,
-  note: "Liked a tweet"
-}
-activity = Activity.new(values)
+contact = Contact.where({first_name: "Ken", last_name: "Nakashima"})[0]
+activity = Activity.new
+activity.salesperson_id = ben.id
+activity.contact_id = contact.id
+activity.activity = "Liked a tweet"
 activity.save
 # 6. Loop through the salespeople and display their activites and related contacts, e.g.:
 
@@ -52,13 +48,14 @@ activity.save
 # Ben Block
 # Liked a tweet - Elon Musk
 
-companies = Company.all
-for company in companies
-    puts company.name
-    # contacts = Contact.where(company_id: contact.id)
-    contacts = company.contacts
+salespeople = Salesperson.all
 
-    for contact in contacts
-        puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
-    end
+for salesperson in salespeople
+  puts "#{salesperson.first_name} #{salesperson.last_name}"
+
+  activities = salesperson.activities
+  for activity in activities
+    contact = activity.contact
+    puts "#{activity.activity} - #{contact.first_name} #{contact.last_name}"
+  end
 end
