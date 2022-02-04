@@ -51,3 +51,14 @@ activity.save
 #
 # Ben Block
 # Liked a tweet - Elon Musk
+
+companies = Company.all
+for company in companies
+    puts company.name
+    # contacts = Contact.where(company_id: contact.id)
+    contacts = company.contacts
+
+    for contact in contacts
+        puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+    end
+end

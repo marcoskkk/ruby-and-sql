@@ -17,26 +17,26 @@ puts Contact.all.count
 
 # 2. create 1-2 new contacts for each company (they can be made up)
 
-apple = Company.where({name: "Apple, Inc."})[0]
-puts apple.id
+apple = Company.where({ name: "Apple, Inc." })[0]
+apple_id = apple.id
 
 new_contact = Contact.new
 new_contact.first_name = "Marcos"
 new_contact.last_name = "Kashima"
 new_contact.email = "marcos@kashima.com"
 new_contact.phone_number = "312-843-0243"
-new_contact.company_id = apple.id
+new_contact.company_id = apple_id
 new_contact.save
 
-amazon = Company.where({name: "Amazon.com, Inc."})[0]
-puts amazon.id
+amazon = Company.where({ name: "Amazon.com, Inc." })[0]
+amazon_id = amazon.id
 
 new_contact = Contact.new
 new_contact.first_name = "Marcos"
 new_contact.last_name = "Sheng"
 new_contact.email = "marcos@sheng.com"
 new_contact.phone_number = "111-222-333"
-new_contact.company_id = amazon.id
+new_contact.company_id = amazon_id
 new_contact.save
 
 # 3. write code to display how many contacts are in the database AND each contact's info (name, email), e.g.:
