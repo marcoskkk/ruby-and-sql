@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-    has_many :contact
+    has_many :contacts
 
     #HARDER WAY
     #    def contacts
