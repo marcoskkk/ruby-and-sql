@@ -11,7 +11,7 @@ apple_id = apple.id
 
 puts "Contacts at Apple, Inc"
 
-for contact in apple.contact
+for contact in apple.contacts
     puts "#{contact.first_name} #{contact.last_name} - #{contact.company.name}"
 end
 

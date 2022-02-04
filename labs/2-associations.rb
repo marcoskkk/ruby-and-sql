@@ -20,7 +20,7 @@ end
 
 for company in Company.all
     puts company.name
-    for contact in company.contact
+    for contact in company.contacts
         puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
     end
 end

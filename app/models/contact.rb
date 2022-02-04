@@ -1,4 +1,4 @@
 class Contact < ApplicationRecord
-    belongs_to :companies
-    has_many :activity
+    belongs_to :company
+    has_many :activities
 end

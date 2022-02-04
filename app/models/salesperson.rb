@@ -1,3 +1,3 @@
 class Salesperson < ApplicationRecord
-    has_many :activity
+    has_many :activities
 end

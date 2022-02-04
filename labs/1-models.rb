@@ -28,6 +28,14 @@ new_contact.phone_number = "312-843-0243"
 new_contact.company_id = apple_id
 new_contact.save
 
+new_contact = Contact.new
+new_contact.first_name = "Ken"
+new_contact.last_name = "Nakashima"
+new_contact.email = "ken@nakashima.com"
+new_contact.phone_number = "111-111-1111"
+new_contact.company_id = apple_id
+new_contact.save
+
 amazon = Company.where({ name: "Amazon.com, Inc." })[0]
 amazon_id = amazon.id
 
